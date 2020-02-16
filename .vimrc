@@ -1,15 +1,21 @@
-set number
+" VISUAL "
+
+set number 
 set relativenumber
-set hlsearch
+set laststatus=2
 
 syntax on
 
+
+" SEARCH "
+
 set ignorecase
 set smartcase
-
 set incsearch
+set hlsearch
 
-set laststatus=2
+
+" KEYBINDINGS "
+
 set backspace=indent,eol,start
-
 nmap Q <Nop>
