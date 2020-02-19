@@ -102,15 +102,22 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
- alias zshconfig="vim ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Configs:
+alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
+alias gitconfig="vim ~/.gitconfig"
 
+# General:
+alias x="exit"
+
+# Software:
 alias intellij="intellij-idea-ultimate"
 alias pycharm="pycharm-professional"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+
+# Envinroment Variables
 
 export SNAP_HOME=/snap/bin
 export PATH=$PATH:$SNAP_HOME
@@ -130,5 +137,7 @@ bindkey '^f' autosuggest-accept
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ZSH startup
 
 pfetch
