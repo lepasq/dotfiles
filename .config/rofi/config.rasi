@@ -2,7 +2,7 @@ configuration {
 	modi: "window,run,drun,ssh";
         display-drun: "Apps";
         display-window: "Window";
-        terminal: "termite";
+        terminal: "gnome-terminal";
         ssh-client: "ssh";
         show-icons: true;
         ssh-command: "{terminal} -e '{ssh-client} {host}'";
