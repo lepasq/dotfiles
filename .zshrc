@@ -106,9 +106,12 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias gitconfig="vim ~/.gitconfig"
+alias nfconfig="vim ~/.config/neofetch/config.conf"
+alias pfconfig="vim ~/.config/pfetch/.pfetchrc"
 
 # General:
 alias x="exit"
+alias sdn="shutdown -h now"
 
 # Software:
 alias intellij="intellij-idea-ultimate"
@@ -127,6 +130,10 @@ export PATH=$PATH:$JAVA_HOME
 
 export DJANGO_HOME=/home/addo/.local/lib/python3.6/site-packages/django/
 export PATH=$PATH:$DJANGO_HOME
+
+# Load pfetch configuration file
+
+export PFETCH_CONFIG=$HOME/.config/pfetch/.pfetchrc
 
 
 # Keybindings 
