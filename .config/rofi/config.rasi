@@ -8,4 +8,4 @@ configuration {
         ssh-command: "{terminal} -e '{ssh-client} {host}'";
         run-shell-command: "{terminal} -e '{cmd}'";
 }
-@import "~/.config/rofi/themes/monokai.rasi"
+@import "~/.config/rofi/themes/material.rasi"
