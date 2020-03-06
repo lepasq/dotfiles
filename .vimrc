@@ -6,6 +6,13 @@ filetype off                  " required
 call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'frazrepo/vim-rainbow'
+Plug 'itchyny/lightline.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdcommenter'
+Plug 'mileszs/ack.vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 
@@ -14,6 +21,7 @@ call plug#end()
 set number 
 set relativenumber
 set laststatus=2
+let g:rainbow_active = 1
 
 let g:lightline = {
       \ 'colorscheme':'powerline',
