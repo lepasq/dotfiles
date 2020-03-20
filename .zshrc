@@ -147,4 +147,5 @@ bindkey '^f' autosuggest-accept
 
 # ZSH startup
 
-neofetch --source ~/.config/neofetch/ascii/chungus.txt
+# neofetch --source ~/.config/neofetch/ascii/chungus.txt
+pfetch
