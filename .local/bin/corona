@@ -1,0 +1,3 @@
+#!/bin/sh
+
+grep "Country\|Germany\|Italy\|Netherlands" ~/.cache/corona
