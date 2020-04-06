@@ -125,7 +125,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 export SNAP_HOME=/snap/bin
 export PATH=$PATH:$SNAP_HOME
 
-export JAVA_HOME=/usr/local/jdk1.8.0/bin
+export JAVA_HOME=/usr/lib/jvm/jdk-11.0.6/
 export PATH=$PATH:$JAVA_HOME
 
 export DJANGO_HOME=/home/addo/.local/lib/python3.6/site-packages/django/
