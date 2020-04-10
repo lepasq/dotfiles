@@ -1,7 +1,7 @@
 " PLUGINS
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype plugin on                  " required
 
 call plug#begin()
 Plug 'preservim/NERDTree'
@@ -21,6 +21,7 @@ call plug#end()
 set number 
 set relativenumber
 set laststatus=2
+set t_Co=256
 let g:rainbow_active = 1
 
 let g:lightline = {

@@ -24,3 +24,5 @@
         changed = green
         untracked = cyan
 
+[core]
+	autocrlf = input
