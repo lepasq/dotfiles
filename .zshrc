@@ -125,11 +125,14 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 export SNAP_HOME=/snap/bin
 export PATH=$PATH:$SNAP_HOME
 
-export JAVA_HOME=/usr/lib/jvm/jdk-11.0.6/
+export JAVA_HOME=/usr/lib/jvm/jdk-11.0.7/
 export PATH=$PATH:$JAVA_HOME
 
 export DJANGO_HOME=/home/addo/.local/lib/python3.6/site-packages/django/
 export PATH=$PATH:$DJANGO_HOME
+
+export VISUAL=vim;
+export EDITOR=vim;
 
 # Load pfetch configuration file
 
