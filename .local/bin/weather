@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ "$(stat -c %y ~/.cache/weather 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
+        curl -s "wttr.in/?F" > ~/.cache/weather
+
+cat ~/.cache/weather
