@@ -18,10 +18,12 @@ call plug#end()
 
 " VISUAL "
 
-set number 
+set number
 set relativenumber
 set laststatus=2
 set t_Co=256
+set termguicolors
+colorscheme gruvbox8
 let g:rainbow_active = 1
 
 let g:lightline = {
@@ -39,7 +41,7 @@ syntax on
 filetype on
 filetype indent on
 filetype plugin on
-
+set mouse=a
 set autoindent
 set expandtab
 set shiftwidth=4
@@ -55,6 +57,12 @@ set hlsearch
 
 " KEYBINDINGS "
 
+" Simplify split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 set backspace=indent,eol,start
 nmap Q <Nop>
 silent! nmap <C-p> :NERDTreeToggle<CR>
@@ -62,3 +70,9 @@ silent! map <F3> :NERDTreeFind<CR>
 
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
+
+
+" MISC "
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
