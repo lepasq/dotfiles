@@ -5,7 +5,7 @@ alias gitconfig="vim ~/.gitconfig"
 
 
 # software:
-alias config='/usr/bin/git --git-dir=$home/dotfiles/ --work-tree=$home'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 alias intellij="intellij-idea-ultimate"
 alias pycharm="pycharm-professional"
