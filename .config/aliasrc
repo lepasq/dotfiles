@@ -1,0 +1,21 @@
+# Config files
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias gitconfig="vim ~/.gitconfig"
+
+
+# software:
+alias config='/usr/bin/git --git-dir=$home/dotfiles/ --work-tree=$home'
+
+alias intellij="intellij-idea-ultimate"
+alias pycharm="pycharm-professional"
+alias tomstart="sudo $catalina_home/bin/startup.sh"
+alias tomstop="sudo $catalina_home/bin/shutdown.sh"
+
+
+# Misc
+alias x="exit"
+alias sdn="shutdown -h now"
+alias ka="killall"
+alias g="git"
+alias rm="rm -v"

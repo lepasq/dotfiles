@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
+# Aliases:
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -97,28 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Configs:
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
-alias gitconfig="vim ~/.gitconfig"
-alias nfconfig="vim ~/.config/neofetch/config.conf"
-alias pfconfig="vim ~/.config/pfetch/.pfetchrc"
-
-# General:
-alias x="exit"
-alias sdn="shutdown -h now"
-
-# Software:
-alias intellij="intellij-idea-ultimate"
-alias pycharm="pycharm-professional"
-
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
 
 # Envinroment Variables
 
@@ -127,6 +109,9 @@ export PATH=$PATH:$SNAP_HOME
 
 export JAVA_HOME=/usr/lib/jvm/jdk-11.0.7/
 export PATH=$PATH:$JAVA_HOME
+
+export CATALINA_HOME=/opt/tomcat/apache-tomcat-8.5.54
+export PATH=$PATH:$CATALINA_HOME
 
 export DJANGO_HOME=/home/addo/.local/lib/python3.6/site-packages/django/
 export PATH=$PATH:$DJANGO_HOME
@@ -139,7 +124,7 @@ export EDITOR=vim;
 export PFETCH_CONFIG=$HOME/.config/pfetch/.pfetchrc
 
 
-# Keybindings 
+# Keybindings
 
 bindkey '^[k' up-history
 bindkey '^[j' down-history
