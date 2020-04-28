@@ -25,6 +25,7 @@ set t_Co=256
 set termguicolors
 colorscheme gruvbox8
 let g:rainbow_active = 1
+set background=dark
 
 let g:lightline = {
       \ 'colorscheme':'powerline',
@@ -41,7 +42,6 @@ syntax on
 filetype on
 filetype indent on
 filetype plugin on
-set mouse=a
 set autoindent
 set expandtab
 set shiftwidth=4
