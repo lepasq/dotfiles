@@ -19,3 +19,12 @@ alias sdn="shutdown -h now"
 alias ka="killall"
 alias g="git"
 alias rm="rm -v"
+
+
+# Colored output where possible
+
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
