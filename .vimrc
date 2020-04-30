@@ -22,9 +22,10 @@ set number
 set relativenumber
 set laststatus=2
 set t_Co=256
-set termguicolors
-colorscheme gruvbox8
+" set termguicolors
 let g:rainbow_active = 1
+
+colorscheme gruvbox8
 set background=dark
 
 let g:lightline = {
@@ -35,6 +36,7 @@ let g:lightline = {
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 
 " EDITS "
 
@@ -47,6 +49,7 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+
 " SEARCH "
 
 set ignorecase
@@ -54,8 +57,6 @@ set smartcase
 set incsearch
 set hlsearch
 
-
-" KEYBINDINGS "
 
 " Simplify split navigation
 map <C-h> <C-w>h
@@ -68,11 +69,26 @@ nmap Q <Nop>
 silent! nmap <C-p> :NERDTreeToggle<CR>
 silent! map <F3> :NERDTreeFind<CR>
 
+
+ " Change NERDTree Keybindings
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 
 
-" MISC "
+" Set Spellchecking keybinding
+map <F6> :setlocal spell! spelllang=en_us<CR>
+
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+
+" HTML keybindings
+" Change to d4l, to stay in normal mode after double space
+inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+
+
+autocmd FileType html inoremap ;p <p></p><Enter><++><Esc>ki
+autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
+autocmd FileType html inoremap ;1 <h1></h1><Enter><++><Esc>kli
+autocmd FileType html inoremap ;d <div></div><Enter><++><Esc>k2li
