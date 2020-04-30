@@ -2,25 +2,25 @@
 
 export SNAP_HOME=/snap/bin
 export PATH=$PATH:$SNAP_HOME
-
 export JAVA_HOME=/usr/lib/jvm/jdk-11.0.7/
 export PATH=$PATH:$JAVA_HOME
-
 export CATALINA_HOME=/opt/tomcat/apache-tomcat-8.5.54
 export PATH=$PATH:$CATALINA_HOME
-
 export DJANGO_HOME=/home/addo/.local/lib/python3.6/site-packages/django/
 export PATH=$PATH:$DJANGO_HOME
 
-export VISUAL=vim;
-export EDITOR=vim;
 
-# Load pfetch configuration file
+# Default Programs
 
-export PFETCH_CONFIG=$HOME/.config/pfetch/.pfetchrc
+export VISUAL="vim";
+export EDITOR="vim";
+export READER="zathura";
+export BROWSER="firefox";
+export CODEEDITOR="vscodium";
 
 
 # This is the list for lf icons:
+
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\

@@ -115,4 +115,5 @@ bindkey '^f' autosuggest-accept
 # ZSH startup
 
 # neofetch --source ~/.config/neofetch/ascii/chungus.txt
+export PFETCH_CONFIG=$HOME/.config/pfetch/.pfetchrc
 pfetch
