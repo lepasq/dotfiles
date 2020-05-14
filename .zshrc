@@ -109,6 +109,7 @@ bindkey '^[k' up-history
 bindkey '^[j' down-history
 bindkey '^f' autosuggest-accept
 
+alias intellij="cd /opt/idea/bin/ && ./idea.sh &"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
