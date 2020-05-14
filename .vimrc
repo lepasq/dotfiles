@@ -13,6 +13,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
+Plug 'shime/vim-livedown'
 call plug#end()
 
 
@@ -85,10 +86,23 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " HTML keybindings
 " Change to d4l, to stay in normal mode after double space
-inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
-
+autocmd FileType html inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
 
 autocmd FileType html inoremap ;p <p></p><Enter><++><Esc>ki
 autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
 autocmd FileType html inoremap ;1 <h1></h1><Enter><++><Esc>kli
 autocmd FileType html inoremap ;d <div></div><Enter><++><Esc>k2li
+
+
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+" the browser to use, can also be firefox, chrome or other, depending on your executable
+let g:livedown_browser = "firefox"
+

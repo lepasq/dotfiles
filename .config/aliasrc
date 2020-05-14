@@ -7,7 +7,7 @@ alias gitconfig="vim ~/.gitconfig"
 # software:
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-alias intellij="intellij-idea-ultimate"
+# alias intellij="intellij-idea-ultimate"
 alias pycharm="pycharm-professional"
 alias tomstart="sudo $catalina_home/bin/startup.sh"
 alias tomstop="sudo $catalina_home/bin/shutdown.sh"
@@ -19,6 +19,7 @@ alias sdn="shutdown -h now"
 alias ka="killall"
 alias g="git"
 alias rm="rm -v"
+alias readme="vim +LivedownPreview README.md"
 
 
 # Colored output where possible
