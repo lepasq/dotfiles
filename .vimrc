@@ -29,10 +29,17 @@ let g:rainbow_active = 1
 colorscheme gruvbox8
 set background=dark
 
-let g:lightline = {
-      \ 'colorscheme':'powerline',
-      \ }
 
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 
 autocmd StdinReadPre * let s:std_in=1
