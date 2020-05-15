@@ -14,19 +14,22 @@ Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'shime/vim-livedown'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/vim-gitbranch'
 call plug#end()
 
 
 " VISUAL "
 
+
 set number
 set relativenumber
 set laststatus=2
 set t_Co=256
-" set termguicolors
 let g:rainbow_active = 1
+set noshowcmd
 
-colorscheme gruvbox8
+colorscheme gruvbox
 set background=dark
 
 
@@ -37,7 +40,7 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
+      \   'gitbranch': 'gitbranch#name'
       \ },
       \ }
 

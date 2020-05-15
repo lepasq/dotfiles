@@ -12,8 +12,8 @@ export PATH=$PATH:$DJANGO_HOME
 
 # Default Programs
 
-export VISUAL="vim";
-export EDITOR="vim";
+export VISUAL="nvim";
+export EDITOR="nvim";
 export READER="zathura";
 export BROWSER="firefox";
 export CODEEDITOR="vscodium";

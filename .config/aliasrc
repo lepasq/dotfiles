@@ -1,7 +1,7 @@
 # Config files
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
-alias gitconfig="vim ~/.gitconfig"
+alias zshconfig="nvim ~/.zshrc"
+alias vimconfig="nvim ~/.config/nvim/init.vim"
+alias gitconfig="nvim ~/.gitconfig"
 
 
 # software:
@@ -20,7 +20,7 @@ alias sdn="shutdown -h now"
 alias ka="killall"
 alias g="git"
 alias rm="rm -v"
-alias readme="vim +LivedownPreview README.md"
+alias readme="nvim +LivedownPreview README.md"
 
 
 # Colored output where possible
@@ -30,3 +30,7 @@ alias \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"
+
+
+alias vim="nvim"
+alias vvim="vim"
