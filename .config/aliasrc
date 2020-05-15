@@ -11,6 +11,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias pycharm="pycharm-professional"
 alias tomstart="sudo $catalina_home/bin/startup.sh"
 alias tomstop="sudo $catalina_home/bin/shutdown.sh"
+alias intellij="cd /opt/idea/bin/ && ./idea.sh &"
 
 
 # Misc

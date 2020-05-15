@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+TERM=xterm-256color
 
 # Keybindings
 
@@ -109,7 +110,6 @@ bindkey '^[k' up-history
 bindkey '^[j' down-history
 bindkey '^f' autosuggest-accept
 
-alias intellij="cd /opt/idea/bin/ && ./idea.sh &"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
