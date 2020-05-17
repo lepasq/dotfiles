@@ -17,6 +17,7 @@ export EDITOR="nvim";
 export READER="zathura";
 export BROWSER="firefox";
 export CODEEDITOR="vscodium";
+export TERMINAL="alacritty";
 
 
 # This is the list for lf icons:
