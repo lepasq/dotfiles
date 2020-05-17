@@ -1,0 +1,30 @@
+#!/bin/sh
+
+[ -d ~/Documents/games/"$1"/ ] || {
+    echo "'$1' does not exist. Please select one of the following values:"
+    ls ~/Documents/games/
+}
+
+
+[ -z "$1" ] && {
+    echo "No input. Please select one of the following values:"
+    ls ~/Documents/games/
+
+}
+
+
+[ "$1" = "gba" ] && {
+    game=$(find ~/Documents/games/gba/ -iname '*.gb*'| dmenu -i -l 30)
+    vba --throttle=100 --filter-super-eagle "$game"
+}
+
+
+[ "$1" = "nsix" ] && {
+    game=$(find ~/Documents/games/nsix/ -iname '*64'| dmenu -i -l 30)
+    mupen64plus "$game"
+}
+
+[ "$1" = "gamecube" ] && {
+    game=$(find ~/Documents/games/gamecube/ -iname '*.iso'| dmenu -i -l 30)
+    dolphin-emu -e "$game"
+}
