@@ -2,6 +2,7 @@
 
 set nocompatible              " be iMproved, required
 filetype plugin on                  " required
+let mapleader=" "
 
 call plug#begin()
 Plug 'preservim/NERDTree'
@@ -16,6 +17,11 @@ Plug 'mhinz/vim-signify'
 Plug 'shime/vim-livedown'
 Plug 'morhetz/gruvbox'
 Plug 'itchyny/vim-gitbranch'
+Plug 'mhinz/vim-startify'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'chrisbra/colorizer'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
@@ -46,7 +52,6 @@ let g:lightline = {
 
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 
 " EDITS "
@@ -69,6 +74,7 @@ set incsearch
 set hlsearch
 
 
+
 " Simplify split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -77,13 +83,16 @@ map <C-l> <C-w>l
 
 set backspace=indent,eol,start
 nmap Q <Nop>
-silent! nmap <C-p> :NERDTreeToggle<CR>
-silent! map <F3> :NERDTreeFind<CR>
 
 
  " Change NERDTree Keybindings
+
+silent! nmap <C-p> :NERDTreeToggle<CR>
+silent! map <F3> :NERDTreeFind<CR>
+
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
+
 
 
 " Set Spellchecking keybinding
