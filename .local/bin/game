@@ -5,17 +5,14 @@
     ls ~/Documents/games/
 }
 
-
 [ -z "$1" ] && {
     echo "No input. Please select one of the following values:"
     ls ~/Documents/games/
-
 }
-
 
 [ "$1" = "gba" ] && {
     game=$(find ~/Documents/games/gba/ -iname '*.gb*'| dmenu -i -l 30)
-    vba --throttle=100 --filter-super-eagle "$game"
+    mgba-qt "$game"
 }
 
 
@@ -26,5 +23,15 @@
 
 [ "$1" = "gamecube" ] && {
     game=$(find ~/Documents/games/gamecube/ -iname '*.iso'| dmenu -i -l 30)
+    dolphin-emu -e "$game"
+}
+
+[ "$1" = "ps2" ] && {
+    game=$(find ~/Documents/games/ps2/ -iname '*.iso'| dmenu -i -l 30)
+    PCSX2 "$game"
+}
+
+[ "$1" = "wii" ] && {
+    game=$(find ~/Documents/games/wii/ -iname '*.iso'| dmenu -i -l 30)
     dolphin-emu -e "$game"
 }
