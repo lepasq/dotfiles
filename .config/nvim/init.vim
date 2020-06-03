@@ -15,12 +15,13 @@ Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 Plug 'shime/vim-livedown'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/vim-gitbranch'
 Plug 'mhinz/vim-startify'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'chrisbra/colorizer'
+Plug 'ThePrimeagen/vim-be-good'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -64,6 +65,7 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+set clipboard=unnamedplus
 
 
 " SEARCH "
@@ -74,7 +76,6 @@ set incsearch
 set hlsearch
 
 
-
 " Simplify split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -83,6 +84,10 @@ map <C-l> <C-w>l
 
 set backspace=indent,eol,start
 nmap Q <Nop>
+
+
+" Replace all is aliased to S.
+nnoremap S :%s//g<Left><Left>
 
 
  " Change NERDTree Keybindings
@@ -105,7 +110,7 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " HTML keybindings
 " Change to d4l, to stay in normal mode after double space
-autocmd FileType html inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+autocmd FileType html inoremap ,, <Esc>/<++><Enter>"_c4l
 
 autocmd FileType html inoremap ;p <p></p><Enter><++><Esc>ki
 autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
@@ -123,5 +128,5 @@ let g:livedown_open = 1
 let g:livedown_port = 1337
 
 " the browser to use, can also be firefox, chrome or other, depending on your executable
-let g:livedown_browser = "firefox"
+let g:livedown_browser = $BROWSER
 
