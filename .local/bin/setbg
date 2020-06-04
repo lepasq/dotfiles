@@ -4,6 +4,7 @@
 
 [ -z "$1" ] && wall=$(find ~/.config/wallpaper/wallpaper -type f | shuf -n 1)
 
+cp $wall ~/.cache/wall.png
 notify-send -i "$wall" "Wallpaper changed."
 
 wal -i $wall
