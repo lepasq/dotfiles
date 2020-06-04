@@ -100,6 +100,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# Toggle keyboard layout
+exec_always "setxkbmap -model pc104 -layout us,de -variant ,, -option grp:alt_shift_toggle"
+
 # alternative resize commands
 bindsym $mod+Shift+y   exec --no-startup-id i3resize left
 bindsym $mod+Shift+u   exec --no-startup-id i3resize down
@@ -109,16 +113,16 @@ bindsym $mod+Shift+o   exec --no-startup-id i3resize right
 
 
 # switch to workspace
-bindsym $mod+1 workspace number 1 Projects
-bindsym $mod+2 workspace number 2 Project
-bindsym $mod+3 workspace number 3 Style
-bindsym $mod+4 workspace number 4 Style
+bindsym $mod+1 workspace number 1 Main
+bindsym $mod+2 workspace number 2 Discord
+bindsym $mod+3 workspace number 3 Docs
+bindsym $mod+4 workspace number 4 Zathura
 bindsym $mod+5 workspace number 5 Angular
 bindsym $mod+6 workspace number 6 Angular
 bindsym $mod+7 workspace number 7 Encoding
 bindsym $mod+8 workspace number 8 Encoding
 bindsym $mod+9 workspace number 9 Chill
-bindsym $mod+0 workspace number 10 Chill
+bindsym $mod+0 workspace number 10 Spotify
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -141,12 +145,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5% #decrease sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightness+ # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightness-  # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /home/reggie/bin/toggletouchpad.sh # toggle touchpad
@@ -208,4 +213,6 @@ client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 # Start Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Set background
+exec_always --no-startup-id wal -R
 
