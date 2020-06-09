@@ -1,2 +1,3 @@
 PF_INFO="ascii title os host kernel shell pkgs memory"
+
 PF_SEP=":"

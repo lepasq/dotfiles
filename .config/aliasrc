@@ -33,4 +33,4 @@ alias \
 
 
 alias vim="nvim"
-alias vvim="vim"
+alias vi="nvim"
