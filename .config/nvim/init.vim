@@ -11,6 +11,8 @@ call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'mhinz/vim-startify'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
   " Git
 Plug 'itchyny/vim-gitbranch'
@@ -56,6 +58,8 @@ set termguicolors
 
 colorscheme gruvbox
 set background=dark
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_light = 'soft'
 
 let g:lightline = {
       \ 'colorscheme': 'gruvbox_material',
@@ -85,8 +89,10 @@ set clipboard=unnamedplus
 
 set autoindent
 set expandtab
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set smartindent
 
 
 
@@ -127,13 +133,19 @@ let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 
 
+  " Open NERDTree on the side like in most IDEs/Editors
+map <Leader>pt :NERDTree <CR> :vertical resize 20<CR>
 
+:
   " Set Spellchecking keybinding
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
 
   " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+  " Remap Y to behave like C and D
+nmap Y y$
 
 
 " HTML keybindings
@@ -161,3 +173,11 @@ let g:livedown_port = 1337
   " the browser to use, can also be firefox, chrome or other, depending on your executable
 let g:livedown_browser = $BROWSER
 
+
+
+" FZF
+
+nnoremap <Leader>pg :GFiles<CR>
+nnoremap <Leader>pf :Files<CR>
+nnoremap <Leader>pc :Colors<CR>
+nnoremap <Leader>pw :Windows<CR>
