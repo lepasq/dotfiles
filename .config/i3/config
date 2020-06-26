@@ -8,7 +8,6 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
 # set $mod Control+Space
 
@@ -32,6 +31,9 @@ floating_modifier $mod
 
 # Split vertically by default
 default_orientation vertical
+
+# Fibonacci mode
+#for_window [class=".*"] split toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -101,17 +103,15 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
+# open spotify
+bindsym $mod+m exec --no-startup-id spotify
 
-# focus the child container
-#bindsym $mod+d focus child
+# open broswers
+bindsym $mod+F1 exec firefox
+bindsym $mod+F2 exec brave-browser
 
 # lock screen
 bindsym Control+Mod1+l exec --no-startup-id $HOME/.config/i3/scripts/lock.sh
-
-# Fibonacci mode
-for_window [class=".*"] split toggle
 
 # Toggle keyboard layout
 exec_always "setxkbmap -model pc104 -layout us,de -variant ,, -option grp:alt_shift_toggle"
@@ -155,6 +155,37 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
+
+
+# move focused container to workspace and swap to that workspace
+bindsym $mod+Control+1 move container to workspace number 1; workspace 1
+bindsym $mod+Control+2 move container to workspace number 2; workspace 2
+bindsym $mod+Control+3 move container to workspace number 3; workspace 3
+bindsym $mod+Control+4 move container to workspace number 4; workspace 4
+bindsym $mod+Control+5 move container to workspace number 5; workspace 5
+bindsym $mod+Control+6 move container to workspace number 6; workspace 6
+bindsym $mod+Control+7 move container to workspace number 7; workspace 7
+bindsym $mod+Control+8 move container to workspace number 8; workspace 8
+bindsym $mod+Control+9 move container to workspace number 9; workspace 9
+bindsym $mod+Control+0 move container to workspace number 10; workspace 0
+
+
+# Move workspaces betweeen monitors
+bindsym $mod+Control+m move workspace to output primary
+bindsym $mod+Control+s move workspace to output HDMI-1
+bindsym $mod+Control+l move workspace to output right
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+j move workspace to output down
+bindsym $mod+Control+k move workspace to output up
+
+# Moves container to the active workspace on another screen
+bindsym $mod+Shift+Control+m move container to output primary
+bindsym $mod+Shift+Control+s move container to output HDMI-1
+bindsym $mod+Shift+Control+l move container to output right
+bindsym $mod+Shift+Control+h move container to output left
+bindsym $mod+Shift+Control+j move container to output down
+bindsym $mod+Shift+Control+k move container to output up
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
