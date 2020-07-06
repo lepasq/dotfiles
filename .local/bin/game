@@ -6,8 +6,8 @@
 }
 
 [ -z "$1" ] && {
-    echo "No input. Please select one of the following values:"
-    ls ~/Documents/games/
+    input=$(ls ~/Documents/games/ | dmenu -i -l 30)
+    [ -z "$input" ] || game "$input"
 }
 
 [ "$1" = "gba" ] && {
@@ -32,6 +32,6 @@
 }
 
 [ "$1" = "wii" ] && {
-    game=$(find ~/Documents/games/wii/ -iname '*.iso'| dmenu -i -l 30)
+    game=$(find ~/Documents/games/wii/ -iname '*'| dmenu -i -l 30)
     [ -z "$game" ] || dolphin-emu -e "$game"
 }
