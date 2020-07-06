@@ -3,23 +3,15 @@
 
 [colors]
 background = ${xrdb:color0:#222}
-;background = #212E36
-;background = #cf172a47
-;it's ARGB so "cfl" is for transparency
-;background-alt = #cf3C5A46
 background-alt = ${xrdb:color3:#222}
-background-unf = #cf2E463E
-background-mod0 = #cf3C5A46
-background-mod1 = #cf546E53
-background-mod2 = #cf708963
-background-alrt = ${xrdb:color3:#222};#cfA1BB76
+background-unf = ${colors.background}
+background-mod1 = ${colors.background-alt}
+background-mod2 = ${colors.foreground}
+background-alrt = ${xrdb:color3:#222};
+
 
 foreground = ${xrdb:color7:#222}
-;foreground = #F3F3BA
-;foreground-alt = #F3F3BA
 foreground-alt = ${xrdb:color2:#555}
-;primary = #F3F3BA
-;secondary = #F3F3BA
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 highlight = ${xrdb:color2:#f00}
@@ -58,9 +50,9 @@ font-5 = Font Awesome 5 Brands:pixelsize=8;1
 font-2 = sm4tik:pixelsize=10;1
 
 
-modules-left = i3 music
-modules-center =  date weather
-modules-right =    wireless-network volume battery powermenu
+modules-left = i3 title
+modules-center = date weather
+modules-right = music wireless-network volume battery
 
 tray-position = hidden
 tray-padding = 11
@@ -83,6 +75,11 @@ wm-restack = i3
 ;scroll-down = i3wm-wsprev
 
 
+[module/title]
+type = internal/xwindow
+format-padding = 4
+
+
 [module/weather]
 type = custom/script
 interval = 60
@@ -98,6 +95,7 @@ exec = python3 ~/.config/polybar/scripts/weather.py
 type = custom/script
 exec =  ~/.config/polybar/scripts/mpris.py -f '  {icon} {artist} - {title}'
 tail = true
+format-padding = 4
 
 
 [module/i3]
