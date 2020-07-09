@@ -7,19 +7,12 @@
 
 [ "$1" = "-a" ] && {
     book=$(find "$HOME/Documents/books/" | dmenu -i -l 30)
-    zathura "$book"
+    [ -f "$book" ] && zathura "$book"
     exit
 }
 
 book=$(find "$1" -maxdepth 1 | dmenu -i -l 30)
 
-[ -d "$book" ] && {
-    books "$book"
-    exit
-}
+[ -d "$book" ] && books "$book"
 
-
-[ -f "$book" ] && {
-    zathura "$book"
-    exit
-}
+[ -f "$book" ] && zathura "$book"
