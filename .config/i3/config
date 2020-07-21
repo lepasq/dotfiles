@@ -30,10 +30,10 @@ font pango:JetBrains Mono 8
 floating_modifier $mod
 
 # Split vertically by default
-default_orientation vertical
+default_orientation horizontal
 
 # Fibonacci mode
-#for_window [class=".*"] split toggle
+# for_window [class=".*"] split toggle
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -171,16 +171,16 @@ bindsym $mod+Control+0 move container to workspace number 10; workspace 0
 
 
 # Move workspaces betweeen monitors
-bindsym $mod+Control+m move workspace to output primary
-bindsym $mod+Control+s move workspace to output HDMI-1
+bindsym $mod+Control+m move workspace to output eDP-1
+bindsym $mod+Control+s move workspace to output VGA-1
 bindsym $mod+Control+l move workspace to output right
 bindsym $mod+Control+h move workspace to output left
 bindsym $mod+Control+j move workspace to output down
 bindsym $mod+Control+k move workspace to output up
 
 # Moves container to the active workspace on another screen
-bindsym $mod+Shift+Control+m move container to output primary
-bindsym $mod+Shift+Control+s move container to output HDMI-1
+bindsym $mod+Shift+Control+m move container to output eDP-1
+bindsym $mod+Shift+Control+s move container to output VGA-1
 bindsym $mod+Shift+Control+l move container to output right
 bindsym $mod+Shift+Control+h move container to output left
 bindsym $mod+Shift+Control+j move container to output down
