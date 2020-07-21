@@ -60,6 +60,7 @@ colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'medium'
 let g:gruvbox_contrast_light = 'soft'
+let g:gruvbox_inverted_selections='0'
 
 let g:lightline = {
       \ 'colorscheme': 'gruvbox_material',
@@ -83,6 +84,7 @@ filetype on
 filetype indent on
 filetype plugin on
 set clipboard=unnamedplus
+
 
 
 " INDENTATION "
@@ -181,3 +183,18 @@ nnoremap <Leader>pg :GFiles<CR>
 nnoremap <Leader>pf :Files<CR>
 nnoremap <Leader>pc :Colors<CR>
 nnoremap <Leader>pw :Windows<CR>
+
+
+" COC
+
+nmap <leader>rr <Plug>(coc-rename)
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <leader>g] <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
+nnoremap <leader>cr :CocRestart
