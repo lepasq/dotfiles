@@ -41,9 +41,7 @@ ex=🎯:\
 *.svg=🗺:\
 *.xcf=🖌:\
 *.html=🌎:\
-*.xml=📰:\
-*.gpg=🔒:\
-*.css=🎨:\
+*.xml=📰:\ *.gpg=🔒:\ *.css=🎨:\
 *.pdf=📚:\
 *.djvu=📚:\
 *.epub=📚:\
@@ -83,3 +81,7 @@ ex=🎯:\
 *.part=💔:\
 *.torrent=🔽:\
 "
+
+# Pfetch customization
+export PF_INFO="ascii title os host kernel shell pkgs memory"
+export PF_SEP=":"
