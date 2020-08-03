@@ -8,6 +8,7 @@ export CATALINA_HOME=/opt/tomcat/apache-tomcat-8.5.54
 export PATH=$PATH:$CATALINA_HOME
 export DJANGO_HOME=/home/addo/.local/lib/python3.6/site-packages/django/
 export PATH=$PATH:$DJANGO_HOME
+export PATH=$PATH:/$HOME/.local/bin
 
 
 # Default Programs

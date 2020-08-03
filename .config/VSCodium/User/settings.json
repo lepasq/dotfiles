@@ -2,7 +2,7 @@
     "window.menuBarVisibility": "toggle",
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "Gruvbox Dark Medium",
-    "window.zoomLevel": 1.0,
+    "window.zoomLevel": 1,
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontSize": 16,
     "editor.lineNumbers": "relative",
