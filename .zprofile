@@ -2,7 +2,7 @@
 
 export SNAP_HOME=/snap/bin
 export PATH=$PATH:$SNAP_HOME
-export JAVA_HOME=/usr/lib/jvm/jdk-11.0.7/
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 export PATH=$PATH:$JAVA_HOME
 export CATALINA_HOME=/opt/tomcat/apache-tomcat-8.5.54
 export PATH=$PATH:$CATALINA_HOME

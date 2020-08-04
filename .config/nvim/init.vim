@@ -34,6 +34,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'lifepillar/vim-solarized8'
 Plug 'iCyMind/NeoSolarized'
 Plug 'dylanaraps/wal.vim'
+Plug 'arcticicestudio/nord-vim'
 
   " Bar
 Plug 'frazrepo/vim-rainbow'
