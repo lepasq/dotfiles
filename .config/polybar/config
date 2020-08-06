@@ -52,24 +52,18 @@ font-2 = sm4tik:pixelsize=10;1
 
 modules-left = i3 title
 modules-center = date weather
-modules-right = music wireless-network volume battery
+modules-right = music battery volume
 
-tray-position = hidden
-tray-padding = 11
+tray-position = right
+tray-padding = 10
 tray-transparent = true
-tray-offset-y = 22
-tray-offset-x = -0
+tray-offset-x = 0
 tray-maxsize = 18
-tray-detached = true
-;tray-background = #0063ff
+tray-detached = false
 
-;wm-restack = bspwm
 wm-restack = i3
 
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev

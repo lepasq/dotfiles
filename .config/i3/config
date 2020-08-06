@@ -108,10 +108,11 @@ bindsym $mod+m exec --no-startup-id spotify
 
 # open broswers
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec brave-browser
+bindsym $mod+F2 exec brave
+bindsym $mod+Shift+F2 exec brave -app='https://web.whatsapp.com'
 
 # lock screen
-bindsym Control+Mod1+l exec --no-startup-id $HOME/.config/i3/scripts/lock.sh
+bindsym Control+Mod4+Mod1+l exec --no-startup-id $HOME/.config/i3/scripts/lock.sh
 
 # Toggle keyboard layout
 exec_always "setxkbmap -model pc104 -layout us,de -variant ,, -option grp:alt_shift_toggle"

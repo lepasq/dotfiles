@@ -3,3 +3,4 @@
 remaps
 wal -R
 dunst &
+nm-applet &
