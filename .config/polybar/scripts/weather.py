@@ -8,7 +8,7 @@ import os
 
 
 def main():
-    city = "Ulm"
+    city = "Enschede"
     api_key = ""
 
     try:
