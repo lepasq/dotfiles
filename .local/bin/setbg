@@ -6,9 +6,6 @@
 
 cp $wall ~/.cache/wall.png
 
-# add png file header
-convert $HOME/.cache/wall.png $HOME/.cache/wall.png
-
 notify-send -i "$wall" "Wallpaper changed."
 
 wal -i $wall

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mogrify -format png -resize 1920x1080 *.jpeg
+find . -type f -iname \*.jpeg -delete
+mogrify -format png -resize 1920x1080 *.jpg
+find . -type f -iname \*.jpg -delete
