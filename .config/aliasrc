@@ -1,30 +1,31 @@
 # Config files
 alias zshconfig="nvim ~/.zshrc"
 alias vimconfig="nvim ~/.config/nvim/init.vim"
-alias gitconfig="nvim ~/.gitconfig"
-
-
-# software:
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
-# alias intellij="intellij-idea-ultimate"
-alias pycharm="pycharm-professional"
-alias tomstart="sudo $catalina_home/bin/startup.sh"
-alias tomstop="sudo $catalina_home/bin/shutdown.sh"
-alias intellij="cd /opt/idea/bin/ && ./idea.sh &"
+alias i3config="nvim ~/.config/i3/config"
+alias barconfig="nvim ~/.config/polybar/config"
 
 
 # Misc
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias x="exit"
 alias sdn="shutdown -h now"
 alias ka="killall"
 alias g="git"
 alias rm="rm -v"
 alias readme="nvim +LivedownPreview README.md"
+alias pacman="sudo pacman"
+alias i3x="i3-msg exit"
+alias .r=". ranger"
+alias tmux="tmux -u"
+
+alias ..="cd .."
+alias 2.="cd ../../"
+alias 3.="cd ../../../"
+alias 4.="cd ../../../../"
+alias 5.="cd ../../../../../"
 
 
 # Colored output where possible
-
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
