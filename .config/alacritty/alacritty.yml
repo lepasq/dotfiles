@@ -112,38 +112,18 @@ font:
     x: 0
     y: 0
 
-# If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: false
 
-
-
-# Colors (Gruvbox dark)
+# Colors (Gruvbox dark hard)
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '#1d2021'
-    background: '#282828'
-    # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2'
+    background: '0x1d2021'
+    foreground: '0xd5c4a1'
 
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#9a9a9a'
-    #bright_foreground: '#ffffff'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor. If these are unset,
-  # the cursor color will be the inverse of the cell color.
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '#191919'
-    cursor: '#d8dee9'
-
-  # Selection colors
+    text: '0x1d2021'
+    cursor: '0xd5c4a1'
 
   # Colors which should be used to draw the selection area. If selection
   # background is unset, selection color will be the inverse of the cell colors.
@@ -152,27 +132,29 @@ colors:
     text: '#191919'
     background: '#d8dee9'
 
+
   # Normal colors
   normal:
-    black:   '#282828'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
+    black:   '0x1d2021'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xd5c4a1'
 
   # Bright colors
   bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
+    black:   '0x665c54'
+    red:     '0xfe8019'
+    green:   '0x3c3836'
+    yellow:  '0x504945'
+    blue:    '0xbdae93'
+    magenta: '0xebdbb2'
+    cyan:    '0xd65d0e'
+    white:   '0xfbf1c7'
+
 
   # Dim colors
   dim:
@@ -184,6 +166,10 @@ colors:
     magenta: '#c583d0'
     cyan:    '#8adaf1'
     white:   '#e0e3e7'
+
+draw_bold_text_with_bright_colors: false
+  # Selection colors
+
 
   # Indexed Colors
   #
