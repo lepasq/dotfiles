@@ -1,0 +1,14 @@
+#!/bin/sh
+
+find_note() {
+  local file
+
+file="$(find $HOME/Documents/notes -iname '*.md' -printf '%P\n' | sed -e 's/\.md$//' | fzf --bind 'J:preview-down,K:preview-up' --height 100% --preview 'if file -i {}|grep -q binary; then file -b {}; else glow -s dark $HOME/Documents/notes/{}.md; fi')"
+
+  if [[ -n $file ]]
+  then
+     $EDITOR $HOME/Documents/notes/"$file".md
+  fi
+}
+
+find_note $1
