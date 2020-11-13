@@ -94,7 +94,7 @@
     // Esc to cancle Link Follow
     registerBind("ESCAPE", false, false, false, vim.deactivate.bind(vim));
 
-    funtion rotateSidebarDown() {
+    function rotateSidebarDown() {
         rotateSidebar(1)
     }
 

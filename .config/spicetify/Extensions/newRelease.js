@@ -14,7 +14,7 @@
     }
 
     // How far back the album/track was released to be considered "new"
-    const DAYS_LIMIT = 30
+    const DAYS_LIMIT = 7
     // UI Text
     const BUTTON_NAME_TEXT = "New Releases"
     const NO_FOLLOWED_ARTIST_TEXT = "You have not followed any artist\n.Or there is an error, please restart Spotify."
