@@ -35,7 +35,7 @@
 
 
 ## Installation
-### Script
+### Script Installation
 Warning: This will wipe out your current configurations for the programs above.  
 **DO NOT** run `install.sh` without knowing what it does! Use at your own risk.
 
@@ -111,4 +111,18 @@ The installation script will:
      :PlugInstall
      ```
   </details>
+
+
+## Scripts
+- **`books`**: list all books via dmenu and open specified book at the end
+- **`corona`**: display corona stats in germany, italy and the netherlands
+- **`create`**: create local git repo and push to github
+- **`game`**: launcher script for game consoles and corresponding game files
+- **`note`**: create .md file note
+- **`notes`**: display all notes in fzf and glow
+- **`pdfmerge`**: merge different .pdf files into one
+- **`remaps`**: caps-esc switch and higher xrate frequency
+- **`setbg`**: set background and pywal to either random or specified wallpaper
+- **`up`**: go up by n directories
+- **`weather`**: display weather in local city 
 
