@@ -1,0 +1,44 @@
+[theme]
+name = "gruvbox-dark"
+
+[icons]
+name = "awesome5"
+
+[[block]]
+block = "weather"
+format = "{temp}°"
+service = { name = "openweathermap", api_key = "da1f3c25743ea88ae4cfa4b006e3eee0" , units = "metric" }
+autolocate = true
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "sound"
+step_width = 5
+max_vol = 130
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
+block = "music"
+player = "spotify"
+dynamic_width = true
+max_width = 30
+
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
+
