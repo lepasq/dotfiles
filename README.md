@@ -1,4 +1,4 @@
-[./dotfiles](https://github.com/lepasq/dotfiles/blob/master/images/logo.png)  
+![./dotfiles](images/logo.png)  
 
 ## Setup
 - **Distro**                       : [Arch Linux](https://www.archlinux.org/) :computer: Rolling-release distribution
