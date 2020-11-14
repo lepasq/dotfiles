@@ -86,12 +86,6 @@ format-prefix-foreground = ${colors.foreground-alt}
 exec = python3 ~/.config/polybar/scripts/weather.py
 click-left = "firefox -p 'default-release' https://www.google.com/search?q=weather"
 
-[module/music]
-type = custom/script
-exec =  ~/.config/polybar/scripts/spotify_status.py -f '  {icon} {artist} - {title}'
-tail = true
-format-padding = 4
-
 
 [module/i3]
 
