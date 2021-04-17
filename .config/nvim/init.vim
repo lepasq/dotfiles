@@ -9,7 +9,6 @@ call plug#begin()
 
 " File management
 Plug 'preservim/NERDTree'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -18,28 +17,40 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
 
-  " Misc
+
+" Debugging
+Plug 'puremourning/vimspector'
+Plug 'szw/vim-maximizer'
+
+" Misc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'shime/vim-livedown'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'rbgrouleff/bclose.vim'
-
-  " Practice
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'jiangmiao/auto-pairs'
+
 
   " Themes
 Plug 'gruvbox-community/gruvbox'
 Plug 'lifepillar/vim-solarized8'
-Plug 'iCyMind/NeoSolarized'
 Plug 'dylanaraps/wal.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'ghifarit53/tokyonight-vim'
+
 
   " Bar
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/gruvbox-material'
+
+  " Language support
+Plug 'fatih/vim-go'
+
 
   " Visual
 Plug 'chrisbra/colorizer'
@@ -47,8 +58,8 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
-" VISUAL "
 
+" VISUAL "
 set number
 set relativenumber
 set laststatus=2
@@ -59,9 +70,17 @@ set termguicolors
 
 colorscheme gruvbox
 set background=dark
-let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'soft'
 let g:gruvbox_inverted_selections='0'
+
+
+" colorscheme tokyonight
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+
+
 
 let g:lightline = {
       \ 'colorscheme': 'gruvbox_material',
@@ -79,17 +98,15 @@ autocmd StdinReadPre * let s:std_in=1
 
 
 " EDITS "
-
 syntax on
 filetype on
 filetype indent on
 filetype plugin on
+
 set clipboard=unnamedplus
 
 
-
 " INDENTATION "
-
 set autoindent
 set expandtab
 set tabstop=4
@@ -120,48 +137,84 @@ set splitright          " Vertical split to right of current
 
 
 set backspace=indent,eol,start
+
+
+
+" Common fixes
 nmap Q <Nop>
+nmap <F1> <nop>
+imap <F1> <nop>
+nmap K <nop>
 
 
-  " Replace all is aliased to S.
+" Move lines around
+nnoremap <silent><A-j> :m .+1<CR>==
+nnoremap <silent><A-k> :m .-2<CR>==
+inoremap <silent><A-j> <Esc>:m .+1<CR>==gi
+inoremap <silent><A-k> <Esc>:m .-2<CR>==gi
+vnoremap <silent><A-j> :m '>+1<CR>gv=gv
+vnoremap <silent><A-k> :m '<-2<CR>gv=gv
+
+
+" Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
 
 
-  " Change NERDTree Keybindings
-
-silent! nmap <C-p> :NERDTreeToggle<CR>
-silent! map <F3> :NERDTreeFind<CR>
-
-let g:NERDTreeMapActivateNode="<F3>"
-let g:NERDTreeMapPreview="<F4>"
-
-
   " Open NERDTree on the side like in most IDEs/Editors
-map <Leader>pt :NERDTree <CR> :vertical resize 20<CR>
+map <Leader>pt :NERDTreeToggle <CR> :vertical resize 20<CR>
 
-:
+" Move by line
+nnoremap j gj
+nnoremap k gk
+
+" Go to column, not just line
+nnoremap ' `
+
+
   " Set Spellchecking keybinding
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
 
   " Remove trailing whitespace on save
-autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre *.tex %s/\s\+$//e
 
   " Remap Y to behave like C and D
 nmap Y y$
 
+"better visual
+vnoremap < <gv
+vnoremap > >gv
 
-" HTML keybindings
 
-  " Skip to next <++> with double comma
-  " Change to d4l, to stay in normal mode after double space
-autocmd FileType html inoremap ,, <Esc>/<++><Enter>"_c4l
+" <leader><leader> toggles between buffers
+nnoremap <leader><leader> <c-^>
 
-  " Generate <tag></tag> keybindings
-autocmd FileType html inoremap ;p <p></p><Enter><++><Esc>ki
-autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
-autocmd FileType html inoremap ;1 <h1></h1><Enter><++><Esc>kli
-autocmd FileType html inoremap ;d <div></div><Enter><++><Esc>k2li
+" Display buffers
+nnoremap <Leader>; :Buffers<CR>
+
+" Switch between buffers quickly
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
+" Close all buffers except this one
+command! BufCloseOthers %bd|e#
+
+
+nnoremap <Leader>bp :bp<CR>
+nnoremap <Leader>bn :bn<CR>
+nnoremap <C-N> :bp<CR>
+map <C-P> <Nop>
+nnoremap <C-P> :bn<CR>
+
+nnoremap <Leader>bd :bd<CR>
+nnoremap <Leader>bad :BufCloseOthers<CR>
+
+
+" alias :Q and :W to :q and :w respectively
+command! Q q
+command! W w
+
+
 
 
   " should markdown preview get shown automatically upon opening markdown buffer
@@ -182,8 +235,6 @@ let g:livedown_browser = $BROWSER
 
 nnoremap <Leader>pg :GFiles<CR>
 nnoremap <Leader>pf :Files<CR>
-nnoremap <Leader>pc :Colors<CR>
-nnoremap <Leader>pw :Windows<CR>
 
 
 " COC
@@ -198,4 +249,80 @@ nmap <leader>g[ <Plug>(coc-diagnostic-prev)
 nmap <leader>g] <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-nnoremap <leader>cr :CocRestart
+
+ " Fugitive
+map <leader>gs :Gstatus<CR>
+map <leader>pd :Gdiff<CR>
+map <leader>gb :Gblame<CR>
+
+
+ " Go(lang)
+ " Import missing packages on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+let g:go_textobj_enabled = 0
+
+
+" Debugger remaps
+nnoremap <leader>m :MaximizerToggle!<CR>
+nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
+nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
+nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
+nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
+nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
+nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+
+nmap <leader>dl <Plug>VimspectorStepInto
+nmap <leader>dj <Plug>VimspectorStepOver
+nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>d_ <Plug>VimspectorRestart
+nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+
+nmap <leader>drc <Plug>VimspectorRunToCursor
+nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
+
+
+ " Nerdcommenter
+  "If this doesn't work, then <leader>c<space>
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle
+
+
+
+if has('nvim')
+	nnoremap <silent><A-t> :call TermToggle(12)<CR>
+	inoremap <silent><A-t> <Esc>:call TermToggle(12)<CR>
+	tnoremap <silent><A-t> <C-\><C-n>:call TermToggle(12)<CR>
+	nnoremap <silent><A-r> :call TermToggle(50)<CR>
+	inoremap <silent><A-r> <Esc>:call TermToggle(50)<CR>
+	tnoremap <silent><A-r> <C-\><C-n>:call TermToggle(50)<CR>
+endif
+
+
+" Terminal Function
+    let s:term_buf = 0
+    let s:term_win = 0
+
+    function! TermToggle(height)
+        if win_gotoid(s:term_win)
+            hide
+        else
+            new terminal
+            exec "resize ".a:height
+            try
+                exec "buffer ".s:term_buf
+                exec "bd terminal"
+            catch
+                call termopen($SHELL, {"detach": 0})
+                let s:term_buf = bufnr("")
+                setlocal nonu nornu scl=no nocul
+            endtry
+            startinsert!
+            let s:term_win = win_getid()
+        endif
+    endfunction
+
