@@ -97,7 +97,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 12
+  size: 9
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -113,73 +113,41 @@ font:
     y: 0
 
 
-# Colors (Gruvbox dark hard)
+
+
+
 colors:
   # Default colors
   primary:
-    background: '0x1d2021'
-    foreground: '0xd5c4a1'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x1d2021'
-    cursor: '0xd5c4a1'
-
-  # Colors which should be used to draw the selection area. If selection
-  # background is unset, selection color will be the inverse of the cell colors.
-  # If only text is unset the cell text color will remain the same.
-  selection:
-    text: '#191919'
-    background: '#d8dee9'
-
+    background: '0x1f1e24'
+    foreground: '0xd9b1ba'
 
   # Normal colors
   normal:
-    black:   '0x1d2021'
-    red:     '0xfb4934'
-    green:   '0xb8bb26'
-    yellow:  '0xfabd2f'
-    blue:    '0x83a598'
-    magenta: '0xd3869b'
-    cyan:    '0x8ec07c'
-    white:   '0xd5c4a1'
+    black:   '0x1f1e24'
+    red:     '0x1e75fc'
+    green:   '0xa432e0'
+    yellow:  '0xea272f'
+    blue:    '0xb73647'
+    magenta: '0x9b566b'
+    cyan:    '0x7e7783'
+    white:   '0xd9b1ba'
 
   # Bright colors
   bright:
-    black:   '0x665c54'
-    red:     '0xfe8019'
-    green:   '0x3c3836'
-    yellow:  '0x504945'
-    blue:    '0xbdae93'
-    magenta: '0xebdbb2'
-    cyan:    '0xd65d0e'
-    white:   '0xfbf1c7'
+    black:   '0x977b82'
+    red:     '0x1e75fc'
+    green:   '0x9b42cb'
+    yellow:  '0xea272f'
+    blue:    '0xb73647'
+    magenta: '0x9b566b'
+    cyan:    '0x7e7783'
+    white:   '0xd9b1ba'
 
 
-  # Dim colors
-  dim:
-    black:   '#676f78'
-    red:     '#b55454'
-    green:   '#78a670'
-    yellow:  '#faf380'
-    blue:    '#707fd0'
-    magenta: '#c583d0'
-    cyan:    '#8adaf1'
-    white:   '#e0e3e7'
+
 
 draw_bold_text_with_bright_colors: false
-  # Selection colors
-
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: [{ index: 16, color: '#ff00ff' }]
 
 # Visual Bell
 #
@@ -211,7 +179,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1
+background_opacity: 1.0
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -426,8 +394,8 @@ key_bindings:
   - { key: Y,        mods: Control,       action: Copy             }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  - { key: NumpadAdd,      mods: Control,       action: IncreaseFontSize }
+  - { key: NumpadSubtract, mods: Control,       action: DecreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
 
 debug:
