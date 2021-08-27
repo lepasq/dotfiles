@@ -1,0 +1,16 @@
+firefox
+zsh
+zathura
+zathura-pdf-mupdf
+wget
+sxiv
+scrot
+xclip
+ranger
+qrencode
+mpv
+i3status
+i3status-rust
+fzf
+alacritty
+discord

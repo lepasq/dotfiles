@@ -16,8 +16,8 @@ EOF
 echo -n "Are you sure you want to proceed? (y/n): "
 read INSTALL
 [ "$INSTALL" = "y" ] && {
-    # git clone https://github.com/lepasq/dotfiles.git
-    # cd dotfiles
+    git clone https://github.com/lepasq/dotfiles.git
+    cd dotfiles
 
     #./packages.sh
     #./gitconfig.sh

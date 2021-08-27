@@ -1,0 +1,9 @@
+neovim
+spotify
+spicetify-cli
+ufetch-git
+brave-bin
+glow
+jellyfin-media-player
+noisetorch
+visual-studio-code-insiders-bin

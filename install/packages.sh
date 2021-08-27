@@ -1,13 +1,13 @@
 #!/bin/sh
 echo ========= INSTALLING PACKAGES ==========
-echo Please enter ("debian") if you are using a debian-based system or enter "arch" if you are using an arch based system.
+echo Please enter 'debian' if you are using a debian-based system or enter 'arch' if you are using an arch based system.
 read DISTRO
 
 
 [ "$DISTRO" = "debian" ] && {
-    sudo apt-get update && sudo apt-get upgrade
-    sudo apt-get install git
-    xargs sudo apt-get install pkglist.txt
+    sudo apt-get update -y && sudo apt-get upgrade -y
+    sudo apt-get install -y git
+    xargs sudo apt-get install <pkglist.txt
 }
 
 [ "$DISTRO" = "arch" ] && {
@@ -16,8 +16,9 @@ read DISTRO
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si
-    sudo pacman -S --needed - < pkglist.txt || true
-    yay -S "$(< foreignpkglist.txt)" || true
+    sudo pacman -S $(awk '{print $1}'  pkglist.txt)
+    exec 9<foreignpkglist.txt
+    while read -u9 pkg; do yay -S --needed $pkg; done
 }
 
 
