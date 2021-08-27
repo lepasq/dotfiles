@@ -12,7 +12,7 @@
 
 [ "$1" = "gba" ] && {
     game=$(find ~/Documents/games/gba/ -iname '*.gb*'| dmenu -i -l 30)
-    [ -z "$game" ] || mgba-qt "$game"
+    [ -z "$game" ] || visualboyadvance-m "$game"
 }
 
 

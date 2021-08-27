@@ -2,7 +2,7 @@
 alias zshconfig="nvim ~/.zshrc"
 alias vimconfig="nvim ~/.config/nvim/init.vim"
 alias i3config="nvim ~/.config/i3/config"
-alias barconfig="nvim ~/.config/polybar/config"
+alias barconfig="nvim ~/.config/polybar/config.ini"
 
 
 # Misc
@@ -16,7 +16,10 @@ alias readme="nvim +LivedownPreview README.md"
 alias pacman="sudo pacman"
 alias i3x="i3-msg exit"
 alias .r=". ranger"
+alias r="ranger"
 alias tmux="tmux -u"
+alias mkdir="mkdir -p"
+alias df="df -h"
 
 alias ..="cd .."
 alias 2.="cd ../../"
@@ -34,4 +37,4 @@ alias \
 
 
 alias vim="nvim"
-alias vi="nvim"
+alias signal="signal --use-tray-icon"
