@@ -1,6 +1,8 @@
 #!/bin/sh
 path=$(pwd)
 
+echo ========= SETTING UP SYMLINKS ==========
+
 
 # Config directory
 [ ! -d $HOME/.config ] && mkdir $HOME/.config

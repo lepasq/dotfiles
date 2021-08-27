@@ -15,7 +15,6 @@
 
 
 ## Installation
-### Script Installation
 Warning: This will wipe out your current configurations for the programs above.  
 **DO NOT** run `install.sh` without knowing what it does! Use at your own risk.
 
