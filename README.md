@@ -1,4 +1,5 @@
-![./dotfiles](images/logo.png)  
+# dotfiles 🐧
+![./dotfiles](images/itachi.png)  
 
 ## Setup
 - **Distro**                       : [Arch Linux](https://www.archlinux.org/) :computer: Rolling-release distribution
@@ -15,20 +16,7 @@
 
 
 ## Installation
-Warning: This will wipe out your current configurations for the programs above.  
-**DO NOT** run `install.sh` without knowing what it does! Use at your own risk.
-
-```sh
-sh <(curl -s https://raw.githubusercontent.com/lepasq/dotfiles/master/install/install.sh)
-```
-
-The installation script will:
-* Download the dotfiles repository
-* Wipeout some directories inside `.config/` and `.local/bin/`
-* Create symlinks to my configuration files
-* Install Vim Plug
-* Install oh-my-zsh
-* Configure git config
+Do not run the install script, as I haven't tested it and as it will wipe out some of your directories.
 
 
 ## Scripts
