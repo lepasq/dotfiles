@@ -8,8 +8,11 @@ export CATALINA_HOME=/opt/tomcat/apache-tomcat-8.5.54
 export PATH=$PATH:$CATALINA_HOME
 export DJANGO_HOME=/home/addo/.local/lib/python3.6/site-packages/django/
 export PATH=$PATH:$DJANGO_HOME
-export PATH=$PATH:/$HOME/.local/bin
-
+export PATH=$PATH:$HOME/.local/bin:$PATH
+export PATH=$PATH:$EDITOR
+export LC_ALL=en_US.UTF-8
+export PATH=$PATH:$GOSMS
+export PATH="$HOME/.cabal/bin:$PATH"
 
 # Default Programs
 
@@ -19,7 +22,8 @@ export READER="zathura";
 export BROWSER="firefox";
 export CODEEDITOR="vscodium";
 export TERMINAL="alacritty";
-
+export GOPATH="/home/addo/go"
+export GOSMS="/home/addo/music/"
 
 # This is the list for lf icons:
 
@@ -86,3 +90,5 @@ ex=🎯:\
 # Pfetch customization
 export PF_INFO="ascii title os host kernel shell pkgs memory"
 export PF_SEP=":"
+
+export PATH="$HOME/.cargo/bin:$PATH"
