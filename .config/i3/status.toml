@@ -4,17 +4,25 @@ file = "/home/addo/.config/i3/theme.toml"
 [icons]
 name = "awesome5"
 
+
 [[block]]
 block = "weather"
-format = "{temp}°C"
-service = { name = "openweathermap", api_key = "da1f3c25743ea88ae4cfa4b006e3eee0", place = "Enschede", units = "metric" }
+format = "{temp}C"
+service = { name = "openweathermap", api_key = "da1f3c25743ea88ae4cfa4b006e3eee0", place = "Ulm", units = "metric" }
 on_click = "firefox -p 'default-release' https://www.google.com/search?q=weather"
 
 [[block]]
 block = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+icons = true
+clickable = true
+interval = 5
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
 
 [[block]]
 block = "cpu"
@@ -37,7 +45,7 @@ max_vol = 130
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}% {time}"
+format = "{percentage} {time}"
 
 [[block]]
 block = "music"

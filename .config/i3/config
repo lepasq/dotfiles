@@ -104,12 +104,13 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+m exec --no-startup-id spotify
 
 # open notion
-bindsym $mod+n exec --no-startup-id Notion
+bindsym $mod+n exec --no-startup-id $HOME/Documents/Notion-linux-x64/Notion
 
 # open broswers
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec brave
-bindsym $mod+Shift+w exec brave -app='https://web.whatsapp.com'
+bindsym $mod+Shift+w exec --no-startup-id $HOME/Documents/WhatsApp-linux-x64/WhatsApp
+
 
 # create qr code for whatever is in clipboard
 bindsym $mod+q exec xclip -selection clipboard -o | qrencode -o ~/.qr.png; exec feh -FZ ~/.qr.png
@@ -128,14 +129,20 @@ bindsym $mod+Shift+y   resize grow width 5 px or 5 ppt
 
 
 # move programs to workspaces
+# game emulators
 for_window [class="PCSX2"] move to workspace number 6
 for_window [class="Dolphin"] move to workspace number 6
 for_window [class="mupen64"] move to workspace number 6
 for_window [class="mGBA"] move to workspace number 6
-for_window [class="discord"] move to workspace number 9
-for_window [class="Spotify"] move to workspace number 10
+for_window [class="PokeMMO"] move to workspace number 6
+
+# messenger
 for_window [class="TelegramDesktop"] move to workspace number 8
 for_window [class="Signal"] move to workspace number 8
+for_window [class="whatsapp-nativefier-d40211"] move to workspace number 8
+
+for_window [class="discord"] move to workspace number 9
+for_window [class="Spotify"] move to workspace number 10
 
 
 # set workspace names
@@ -211,8 +218,6 @@ bindsym $mod+Shift+Control+k move container to output up
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
