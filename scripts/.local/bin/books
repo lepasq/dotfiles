@@ -1,0 +1,18 @@
+#!/bin/sh
+
+[ -z "$1" ] && {
+    books "$HOME/Documents/books/"
+    exit
+}
+
+[ "$1" = "-a" ] && {
+    book=$(find "$HOME/Documents/books/" | dmenu -i -l 30)
+    [ -f "$book" ] && zathura "$book"
+    exit
+}
+
+book=$(find "$1" -maxdepth 1 | dmenu -i -l 30)
+
+[ -d "$book" ] && books "$book"
+
+[ -f "$book" ] && zathura "$book"

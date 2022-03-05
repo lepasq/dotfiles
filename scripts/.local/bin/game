@@ -1,0 +1,37 @@
+#!/bin/sh
+
+[ -d ~/Documents/games/"$1"/ ] || {
+    echo "'$1' does not exist. Please select one of the following values:"
+    ls ~/Documents/games/
+}
+
+[ -z "$1" ] && {
+    input=$(ls ~/Documents/games/ | dmenu -i -l 30)
+    [ -z "$input" ] || game "$input"
+}
+
+[ "$1" = "gba" ] && {
+    game=$(find ~/Documents/games/gba/ -iname '*.gb*'| dmenu -i -l 30)
+    [ -z "$game" ] || visualboyadvance-m "$game"
+}
+
+
+[ "$1" = "nsix" ] && {
+    game=$(find ~/Documents/games/nsix/ -iname '*64'| dmenu -i -l 30)
+    [ -z "$game" ] || mupen64plus "$game"
+}
+
+[ "$1" = "gamecube" ] && {
+    game=$(find ~/Documents/games/gamecube/ -iname '*.iso'| dmenu -i -l 30)
+    [ -z "$game" ] || dolphin-emu -e "$game"
+}
+
+[ "$1" = "ps2" ] && {
+    game=$(find ~/Documents/games/ps2/ -iname '*.iso'| dmenu -i -l 30)
+    [ -z "$game" ] || PCSX2 "$game"
+}
+
+[ "$1" = "wii" ] && {
+    game=$(find ~/Documents/games/wii/ -iname '*'| dmenu -i -l 30)
+    [ -z "$game" ] || dolphin-emu -e "$game"
+}

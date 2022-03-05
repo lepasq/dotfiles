@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ "$(stat -c %y ~/.cache/corona 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
+        curl -s https://corona-stats.online/ > ~/.cache/corona
+
+grep "World\|Germany\|Italy\|NL" ~/.cache/corona

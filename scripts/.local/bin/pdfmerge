@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+# pip3 install PyPDF2
+
+"""
+ " Takes in the .pdf files to be merged as the first few arguments,
+ " as well as the resulting name as the last argument.
+"""
+
+from PyPDF2 import PdfFileReader, PdfFileWriter
+import sys
+
+
+def merge_pdfs():
+    pdf_writer = PdfFileWriter()
+    for file in get_pdfs():
+        pdf_reader = PdfFileReader(file)
+        for page in range(pdf_reader.getNumPages()):
+            pdf_writer.addPage(pdf_reader.getPage(page))
+    with open(get_result_name(), 'wb') as out:
+        pdf_writer.write(out)
+        print('PDF file \'' + get_result_name() +'\' was created successfully.')
+
+
+def get_result_name():
+    if(sys.argv[-1][-4:] == ".pdf"):
+        return sys.argv[-1]
+    else:
+        return sys.argv[-1] + ".pdf"
+
+
+def get_pdfs():
+    list = []
+    for arg in sys.argv[1:-1]:
+        list.append(arg)
+    return list
+
+
+merge_pdfs()

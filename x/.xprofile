@@ -1,0 +1,6 @@
+#!/bin/sh
+
+remaps
+wal -R
+dunst &
+nm-applet &

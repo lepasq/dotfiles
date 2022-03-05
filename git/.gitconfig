@@ -1,0 +1,65 @@
+[user]
+	name = lepasq
+	email = pasquarelli.le@gmail.com
+
+[color]
+        ui = auto
+
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+
+[core]
+	autocrlf = input
+
+[merge]
+    tool = nvim
+    conflictstyle = diff3
+
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+[mergetool]
+    prompt = false
+
+[diff]
+	tool = nvimdiff
+
+[difftool]
+	prompt = false
+
+[alias]
+    graph = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'
+    graph2 = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+
+[grep]
+    lineNumber = true
+
+[color "grep"]
+	match = cyan bold
+	selected = blue
+	context = normal
+	filename = magenta
+	linenumber = green
+	separator = yellow
+	function = blue
+
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

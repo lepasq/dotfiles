@@ -1,0 +1,61 @@
+[theme]
+file = "/home/addo/.config/i3/wal.toml"
+
+[icons]
+name = "awesome5"
+
+
+[[block]]
+block = "weather"
+format = "{temp}C"
+service = { name = "openweathermap", api_key = "da1f3c25743ea88ae4cfa4b006e3eee0", place = "Enschede", units = "metric" }
+on_click = "firefox -p 'default-release' https://www.google.com/search?q=weather"
+
+[[block]]
+block = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 5
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "pomodoro"
+length = 25
+break_length = 5
+message = "Take a break!"
+break_message = "Back to work!"
+use_nag = true
+nag_path = "i3-nagbar"
+
+[[block]]
+block = "sound"
+step_width = 2
+max_vol = 130
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
+
+[[block]]
+block = "music"
+player = "spotify"
+dynamic_width = true
+max_width = 40
+separator = " | "
+hide_when_empty = false
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
