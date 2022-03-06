@@ -1,6 +1,4 @@
 # dotfiles 🐧
-![./dotfiles](images/itachi.png)  
-
 ## Setup
 - **Distro**                       : [Arch Linux](https://www.archlinux.org/) :computer: Rolling-release distribution
 - **WM**                           : [i3](https://i3wm.org/) Tiling window manager for X11
@@ -8,7 +6,6 @@
 - **Shell**                        : [zsh](https://wiki.archlinux.org/index.php/zsh) :shell: with [oh my zsh](https://github.com/ohmyzsh/ohmyzsh) framework!
 - **Terminal**                     : [Alacritty](https://github.com/alacritty/alacritty) :crab: GPU-accalerated terminal in Rust!
 - **Text Editor**                  : [NeoVim](https://neovim.io/) Hyperextensible Vim-based text editor
-- **Music Player**                 : [Spicetify](https://github.com/khanhas/spicetify-cli) :notes: Customizable Spotify Client
 - **Notify Daemon**                : [Dunst](https://wiki.archlinux.org/index.php/Dunst) :leaves: minimalism!
 - **Application Launcher**         : [Dmenu](https://tools.suckless.org/dmenu/) :rocket: dynamic menu by suckless.org
 - **File Manager**                 : [Ranger](https://wiki.archlinux.org/index.php/ranger) :bookmark: text-based file manager in python
@@ -16,7 +13,29 @@
 
 
 ## Installation
-Do not run the install script, as I haven't tested it and as it will wipe out some of your directories.
+You can install the files via GNU `stow`  
+
+Clone into your `$HOME` directory  
+```sh
+cd $HOME &&
+git clone https://github.com/lepasq/dotfiles.git &&
+cd dotfiles
+```
+
+Run `stow` to symlink dotfiles to your system  
+```sh
+stow */ # Everything (the '/' ignores the README)
+```
+```sh
+stow zsh # Just my zsh config
+```
+
+Install packages from list (Arch Linux)
+```sh
+yay -S --needed - < pkglist.txt
+```
+
+
 
 
 ## Scripts
