@@ -6,11 +6,9 @@
 
 [ -f "$HOME/.apikeys" ] && source "$HOME/.apikeys"
 
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 
 cat ~/.cache/wal/sequences
 
-
-#[ -z "$TMUX"  ] && { tmux -f ~/.config/tmux/tmux.conf new -s local || exec tmux -f ~/.config/tmux/tmux.conf new -t local && exit }
+[ -z "$TMUX"  ] && { tmux -f ~/.config/tmux/tmux.conf new -s local || exec tmux -f ~/.config/tmux/tmux.conf new -t local && exit }
