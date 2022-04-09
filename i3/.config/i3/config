@@ -49,8 +49,8 @@ bindsym $mod+d exec dmen
 exec --no-startup-id /home/reggie/bin/toggle-xkbmap
 
 for_window [class="^.*"] border pixel 1
-gaps inner 5
-gaps outer 5
+gaps inner 8
+gaps outer 8
 
 
 # bindsym $mod+Shift+minus move scratchpad
@@ -261,12 +261,12 @@ mode "resize" {
         bindsym h resize grow width 5 px or 5 ppt
 
         # Resize inner gaps
-        bindsym 0 gaps inner all set 5
+        bindsym 0 gaps inner all set 8
         bindsym minus gaps inner all plus 5
         bindsym plus gaps inner all minus 5
 
         # Resize outer gaps
-        bindsym p gaps outer all set 5
+        bindsym p gaps outer all set 8
         bindsym bracketleft gaps outer all plus 5
         bindsym bracketright gaps outer all minus 5
 
@@ -340,4 +340,4 @@ client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 # Set background
 exec_always --no-startup-id wal -R
 exec_always --no-startup-id redshift -l 52:7
-exec_always --no-startup-id picom
+#exec_always --no-startup-id picom
