@@ -31,6 +31,10 @@ export PATH="$HOME/.cabal/bin:$PATH"
 export PATH=/home/addo/bin:$PATH
 export PATH=/usr/lib/perl5:$PATH
 
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
 
 # Default Programs
 

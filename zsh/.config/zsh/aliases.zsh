@@ -1,6 +1,6 @@
 # Config files
-alias zshconfig="nvim ~/.config/zsh/.zshrc"
-alias vimconfig="nvim ~/.config/nvim/init.lua"
+alias zshconfig="nvim ~/dotfiles/zsh/.config/zsh/"
+alias vimconfig="nvim ~/dotfiles/nvim/.config/nvim/"
 alias i3config="nvim ~/.config/i3/config"
 alias barconfig="nvim ~/.config/polybar/config.ini"
 
