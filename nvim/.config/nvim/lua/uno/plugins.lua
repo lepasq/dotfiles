@@ -30,14 +30,18 @@ return require("packer").startup(
         use("akinsho/nvim-bufferline.lua")
         use("norcalli/nvim-colorizer.lua")
         use("glepnir/galaxyline.nvim")
+        use("Mofiqul/vscode.nvim")
+        use("ellisonleao/gruvbox.nvim")
 
         -- Software Devlopment
         -- TODO: Currntly doesn't support lsp and treesitter, check back later
         -- use {'fatih/vim-go', run = ':GoUpdateBinaries'}
         use("ekalinin/Dockerfile.vim")
         use("windwp/nvim-autopairs")
-        use("alvan/vim-closetag")
+        use {"windwp/nvim-ts-autotag", config = "require('nvim-ts-autotag').setup({ enable = true })"}
+        --use("alvan/vim-closetag")
         use("ray-x/lsp_signature.nvim")
+        use {"joshuaMarple/galaxyline.nvim", config = "require('uno.statusline')"}
 
         -- Nvim LSP
         use("neovim/nvim-lspconfig")
@@ -54,8 +58,13 @@ return require("packer").startup(
         use("hrsh7th/cmp-cmdline")
         use("hrsh7th/nvim-cmp")
         use({"tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp"})
-        use("L3MON4D3/LuaSnip")
-        use("saadparwaiz1/cmp_luasnip")
+	 use {
+            "David-Kunz/cmp-npm",
+            -- after = "cmp-tabnine",
+            requires = "nvim-lua/plenary.nvim"
+        }
+        use({"saadparwaiz1/cmp_luasnip"}) -- , after = "cmp-npm"
+        use {"L3MON4D3/LuaSnip", requires = {"rafamadriz/friendly-snippets"}} -- , after = "cmp_luasnip"
 
         -- Nvim Treesitter
         use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
@@ -78,6 +87,24 @@ return require("packer").startup(
             }
           end
         }
+        use {"AndrewRadev/splitjoin.vim"} -- to expand / contract multiline
+        use {"JoosepAlviste/nvim-ts-context-commentstring"} -- , after = "nvim-treesitter"
+        use {"tpope/vim-repeat"}
+        use {"tpope/vim-speeddating"}
+        use {"tpope/vim-surround"}
+        use {"folke/todo-comments.nvim", config = "require('todo-comments')"}
+        use {"antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
+        use {
+            "vuki656/package-info.nvim",
+            requires = "MunifTanjim/nui.nvim",
+            config = "require('package-info').setup()"
+        }
+        use {"iamcco/markdown-preview.nvim"}
+        use {"mattn/emmet-vim"}
+        use {"potatoesmaster/i3-vim-syntax"}
+        use {"airblade/vim-rooter"}
+        use {"mvllow/modes.nvim"} -- Highlights current line based on mode
+        use {"zegervdv/nrpattern.nvim", config = "require('nrpattern').setup()"}
 
         -- Golang
         use(

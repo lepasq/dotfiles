@@ -69,5 +69,5 @@ vim.api.nvim_set_keymap('n', '<Leader>G', ':Git<CR>', {noremap = true, silent = 
 
 -- editing
 vim.api.nvim_set_keymap('n', 'S', ':%s//g<Left><Left>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<Space>c<Space>", ':call nerdcommenter#Comment(0, "toggle")<CR>', {noremap = true})
-vim.api.nvim_set_keymap("v", "<Space>c<Space>", ':call nerdcommenter#Comment(0, "toggle")<CR>', {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>c<space>", ':call nerdcommenter#Comment(0, "toggle")<CR>', {noremap = true})
+vim.api.nvim_set_keymap("v", "<Leader>c<space>", ':call nerdcommenter#Comment(0, "toggle")<CR>', {noremap = true})
