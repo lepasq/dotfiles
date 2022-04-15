@@ -116,6 +116,7 @@ cmp.setup(
             {
                 {name = "cmp_tabnine"},
                 {name = "nvim_lsp"},
+                {name = "npm", keyword_length = 4},
                 -- {name = "vsnip"} -- For vsnip users.
                 {name = "luasnip"} -- For luasnip users.
                 -- { name = 'ultisnips' }, -- For ultisnips users.

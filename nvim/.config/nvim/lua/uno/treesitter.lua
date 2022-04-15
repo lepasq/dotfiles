@@ -25,6 +25,7 @@ ts_config.setup {
     highlight = {
         enable = true,
         use_languagetree = true,
+        additional_vim_regex_highlighting = true,
         custom_captures = {
             -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
             ["function.decorator"] = "TSDecorator",
@@ -33,5 +34,8 @@ ts_config.setup {
     },
     autopairs = {
         enable = true
+    },
+    indent = {
+        enable = false
     }
 }

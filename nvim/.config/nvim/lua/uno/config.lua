@@ -1,7 +1,7 @@
 -- Global Options
 -- vim.go.guicursor    = "block"
 vim.go.termguicolors  = true
-vim.go.hlsearch       = false
+vim.go.hlsearch       = true
 vim.go.hidden         = true
 vim.go.errorbells     = false
 vim.go.ignorecase     = true
@@ -9,7 +9,7 @@ vim.go.smartcase      = true
 vim.go.scrolloff      = 12
 vim.go.sidescrolloff  = 21
 --  vim.go.completeopt  = "menuone,noinsert,preview"
-vim.go.completeopt    = "menuone,noselect" 
+vim.go.completeopt    = "menuone,noselect"
 vim.go.cmdheight      = 2
 vim.go.mouse          = "a"
 vim.go.clipboard      = "unnamedplus"
@@ -35,7 +35,7 @@ vim.bo.expandtab      = true
 vim.bo.smartindent    = true
 vim.bo.autoindent     = true
 vim.bo.swapfile       = false
-vim.bo.undofile       = true
+vim.bo.undofile       = false
 
 -- Global Variables
 vim.g.mapleader            = " "
@@ -76,3 +76,6 @@ vim.api.nvim_exec([[ autocmd BufWritePre *.sql :silent! Neoformat pg_format ]], 
 vim.api.nvim_exec([[ autocmd BufWritePre *.js :silent! Neoformat ]], false)
 vim.api.nvim_exec([[ autocmd BufWritePre *.jsx :silent! Neoformat ]], false)
 vim.api.nvim_exec([[ autocmd BufWritePre *.css :silent! Neoformat ]], false)
+
+vim.api.nvim_exec([[ autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2]], false)
+vim.api.nvim_exec([[ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2]], false)

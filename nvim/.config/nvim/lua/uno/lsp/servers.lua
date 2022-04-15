@@ -15,7 +15,7 @@ function common_on_attach(client, bufnr)
     buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
     buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
     buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
-    buf_set_keymap("n", "<C-k>", ":lua vim.lsp.buf.signature_help()<CR>", opts)
+    -- buf_set_keymap("n", "<C-k>", ":lua vim.lsp.buf.signature_help()<CR>", opts)
     buf_set_keymap("n", "<leader>wa", ":lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
     buf_set_keymap("n", "<leader>wr", ":lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
     buf_set_keymap("n", "<leader>wl", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
@@ -32,6 +32,8 @@ function common_on_attach(client, bufnr)
         buf_set_keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting()<CR>", opts)
     elseif client.resolved_capabilities.document_range_formatting then
         buf_set_keymap("n", "<leader>f", ":lua vim.lsp.buf.range_formatting()<CR>", opts)
+    else
+        buf_set_keymap("n", "<leader>f", ":Neoformat<CR>", opts)
     end
 
     -- Seems redundant with LSP Saga Signature Help
@@ -65,14 +67,15 @@ local function setup_servers()
         "eslint",
         "gopls",
         "graphql",
-	      -- "remark_ls",
-        --"zeta_note",
+        --"grammarly",
+        -- "remark_ls",
+        "zeta_note",
         "html",
         "jsonls",
         "jdtls", -- java
         "ltex",
         "sumneko_lua",
-         --"pyright",
+        -- "pyright",
         "jedi_language_server",
         "sqls",
         "tsserver",
@@ -115,6 +118,9 @@ local function setup_servers()
                 opts.settings = {
                     format = {enable = true} -- this will enable formatting
                 }
+                vim.bo.tabstop = 2
+                vim.bo.shiftwidth = 2
+                vim.bo.softtabstop = 2
             end
             if server.name == "sumneko_lua" then
                 opts.settings = {
@@ -136,6 +142,10 @@ local function setup_servers()
             end
             if server.name == "denols" then
                 opts.root_dir = lspconfig.util.root_pattern(".deno")
+                vim.bo.tabstop = 2
+                vim.bo.shiftwidth = 2
+            end
+            if server.name == "tsserver" then
                 vim.bo.tabstop = 2
                 vim.bo.shiftwidth = 2
             end
@@ -214,6 +224,18 @@ require("lspsaga").init_lsp_saga(
 vim.api.nvim_set_keymap("n", "gh", ":lua require'lspsaga.provider'.lsp_finder()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap(
     "n",
+    "<Leader>ca",
+    ":lua require('lspsaga.codeaction').code_action()<CR>",
+    {noremap = true, silent = true}
+)
+vim.api.nvim_set_keymap(
+    "v",
+    "<Leader>ca",
+    ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>",
+    {noremap = true, silent = true}
+)
+vim.api.nvim_set_keymap(
+    "n",
     "<c-Space>",
     ":lua require('lspsaga.codeaction').code_action()<CR>",
     {noremap = true, silent = true}
@@ -224,11 +246,6 @@ vim.api.nvim_set_keymap(
     ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>",
     {noremap = true, silent = true}
 )
-
-vim.api.nvim_set_keymap("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", { noremap = true, silent = true })
-
 
 
 vim.api.nvim_set_keymap(

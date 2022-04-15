@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/Dockerfile.vim",
     url = "https://github.com/ekalinin/Dockerfile.vim"
   },
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -98,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-npm"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/cmp-npm",
+    url = "https://github.com/David-Kunz/cmp-npm"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -124,10 +134,20 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   firenvim = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/firenvim",
     url = "https://github.com/glacambre/firenvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["fwatch.nvim"] = {
     loaded = true,
@@ -154,6 +174,11 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/go.nvim",
     url = "https://github.com/ray-x/go.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["guihua.lua"] = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/guihua.lua",
@@ -163,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["i3-vim-syntax"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/i3-vim-syntax",
+    url = "https://github.com/potatoesmaster/i3-vim-syntax"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
@@ -184,6 +214,16 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["modes.nvim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/modes.nvim",
+    url = "https://github.com/mvllow/modes.nvim"
+  },
   neoformat = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/neoformat",
@@ -193,6 +233,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
+  },
+  ["nrpattern.nvim"] = {
+    config = { "require('nrpattern').setup()" },
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/nrpattern.nvim",
+    url = "https://github.com/zegervdv/nrpattern.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -259,10 +310,27 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    config = { "require('nvim-ts-autotag').setup({ enable = true })" },
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["package-info.nvim"] = {
+    config = { "require('package-info').setup()" },
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/package-info.nvim",
+    url = "https://github.com/vuki656/package-info.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -284,6 +352,11 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["splitjoin.vim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/splitjoin.vim",
+    url = "https://github.com/AndrewRadev/splitjoin.vim"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
@@ -299,6 +372,12 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["todo-comments.nvim"] = {
+    config = { "require('todo-comments')" },
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
+  },
   ["trouble.nvim"] = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/trouble.nvim",
@@ -308,11 +387,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-autoformat",
     url = "https://github.com/Chiel92/vim-autoformat"
-  },
-  ["vim-closetag"] = {
-    loaded = true,
-    path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-closetag",
-    url = "https://github.com/alvan/vim-closetag"
   },
   ["vim-devicons"] = {
     loaded = true,
@@ -324,10 +398,46 @@ _G.packer_plugins = {
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-rooter"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-rooter",
+    url = "https://github.com/airblade/vim-rooter"
+  },
+  ["vim-speeddating"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-speeddating",
+    url = "https://github.com/tpope/vim-speeddating"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
+  },
   ["wal.vim"] = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/wal.vim",
     url = "https://github.com/dylanaraps/wal.vim"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0" },
+    loaded = true,
+    path = "/home/addo/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   },
   ["wpgtk.vim"] = {
     loaded = true,
@@ -337,6 +447,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: package-info.nvim
+time([[Config for package-info.nvim]], true)
+require('package-info').setup()
+time([[Config for package-info.nvim]], false)
+-- Config for: nrpattern.nvim
+time([[Config for nrpattern.nvim]], true)
+require('nrpattern').setup()
+time([[Config for nrpattern.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+require('todo-comments')
+time([[Config for todo-comments.nvim]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+require('nvim-ts-autotag').setup({ enable = true })
+time([[Config for nvim-ts-autotag]], false)
 if should_profile then save_profiles() end
 
 end)
