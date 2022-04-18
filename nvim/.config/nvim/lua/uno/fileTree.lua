@@ -6,7 +6,7 @@ g.nvim_tree_quit_on_open = 0
 g.nvim_tree_indent_markers = 1
 g.nvim_tree_git_hl = 1
 g.nvim_tree_root_folder_modifier = ":t"
-g.nvim_tree_allow_resize = 1
+g.nvim_tree_allow_resize = 0
 g.nvim_tree_add_trailing = 1
 
 g.nvim_tree_show_icons = {
