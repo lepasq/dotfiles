@@ -2,7 +2,7 @@
 
 [ -f "$1" ] && wall="$1"
 
-[ -z "$1" ] && wall=$(find ~/.config/wallpaper/wallpaper -type f | shuf -n 1)
+[ -z "$1" ] && wall=$(find ~/.config/wallpaper/wallpaper | shuf -n 1)
 
 cp $wall ~/.cache/wall.png
 
