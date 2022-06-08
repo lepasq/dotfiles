@@ -69,11 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  Colorizer = {
-    loaded = true,
-    path = "/home/addo/.local/share/nvim/site/pack/packer/start/Colorizer",
-    url = "https://github.com/chrisbra/Colorizer"
-  },
   ["Dockerfile.vim"] = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/Dockerfile.vim",
@@ -183,11 +178,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/addo/.local/share/nvim/site/pack/packer/start/guihua.lua",
     url = "https://github.com/ray-x/guihua.lua"
-  },
-  harpoon = {
-    loaded = true,
-    path = "/home/addo/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["i3-vim-syntax"] = {
     loaded = true,
@@ -447,6 +437,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+require('nvim-ts-autotag').setup({ enable = true })
+time([[Config for nvim-ts-autotag]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+require('todo-comments')
+time([[Config for todo-comments.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: package-info.nvim
 time([[Config for package-info.nvim]], true)
 require('package-info').setup()
@@ -455,18 +457,6 @@ time([[Config for package-info.nvim]], false)
 time([[Config for nrpattern.nvim]], true)
 require('nrpattern').setup()
 time([[Config for nrpattern.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-require('todo-comments')
-time([[Config for todo-comments.nvim]], false)
--- Config for: nvim-ts-autotag
-time([[Config for nvim-ts-autotag]], true)
-require('nvim-ts-autotag').setup({ enable = true })
-time([[Config for nvim-ts-autotag]], false)
 if should_profile then save_profiles() end
 
 end)

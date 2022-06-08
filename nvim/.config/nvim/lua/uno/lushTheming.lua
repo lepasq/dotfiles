@@ -17,8 +17,7 @@ package.loaded['themes.pywal'] = nil
 
 require('lush')(require('themes.pywal'))
 require('lush')(require('themes.pywal'))
--- require("colorizer").setup()
--- require'colorizer'.reload_all_buffers()
+require("colorizer").setup()
 
 local fwatch = require('fwatch')
 fwatch.watch("/home/tyler/.cache/wal/colors", {

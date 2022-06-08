@@ -87,7 +87,6 @@ end
 
 vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require("uno.telescope").find_files()<CR>',           {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>',        {silent = true})
-vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>',          {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>;', ':lua require("telescope.builtin").buffers()<CR>',          {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>ft', ':lua require("telescope.builtin").file_browser()<CR>',          {silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>',        {silent = true})

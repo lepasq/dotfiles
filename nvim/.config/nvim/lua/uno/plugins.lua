@@ -23,8 +23,6 @@ return require("packer").startup(
 
         -- Theming
         use("dylanaraps/wal.vim")
-        use("deviantfero/wpgtk.vim")
-        use("chrisbra/Colorizer")
         use("ryanoasis/vim-devicons")
         use("rktjmp/lush.nvim")
         use("akinsho/nvim-bufferline.lua")
@@ -94,7 +92,7 @@ return require("packer").startup(
         use {"tpope/vim-surround"}
         use {"folke/todo-comments.nvim", config = "require('todo-comments')"}
         use {"antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
-        use {
+        use { -- npm package info
             "vuki656/package-info.nvim",
             requires = "MunifTanjim/nui.nvim",
             config = "require('package-info').setup()"
@@ -104,6 +102,16 @@ return require("packer").startup(
         use {"potatoesmaster/i3-vim-syntax"}
         use {"airblade/vim-rooter"}
         use {"mvllow/modes.nvim"} -- Highlights current line based on mode
+        --use({
+          --'mvllow/modes.nvim',
+          --config = function()
+            --vim.opt.cursorline = true
+            --require('modes').setup({
+            --line_opacity = 0.01
+            --})
+          --end
+        --})
+
         use {"zegervdv/nrpattern.nvim", config = "require('nrpattern').setup()"}
 
         -- Golang
@@ -125,11 +133,8 @@ return require("packer").startup(
         use("tpope/vim-fugitive") -- what is this again?
         use({"sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim"})
 
-        use("ThePrimeagen/harpoon") -- what is this again?
         use("famiu/nvim-reload")
-
         use("lewis6991/gitsigns.nvim")
-
         -- use 'dstein64/vim-startuptime'
         use(
             {
