@@ -108,7 +108,7 @@ bindsym $mod+n exec --no-startup-id $HOME/Documents/Notion-linux-x64/Notion
 
 # open broswers
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec brave
+#bindsym $mod+Shift+b exec brave
 bindsym $mod+Shift+w exec --no-startup-id $HOME/Documents/WhatsApp-linux-x64/WhatsApp
 
 
@@ -222,6 +222,8 @@ bindsym $mod+Shift+r restart
 # set random background
 bindsym $mod+i exec setbg
 
+bindsym $mod+Control+space exec dunstctl close-all
+
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
@@ -231,7 +233,7 @@ bindsym XF86AudioLowerVolume exec $HOME/.config/i3/scripts/volume.sh -2% nosound
 #bindsym XF86AudioMute exec pactl set-sink-mute 2 toggle # mute sound
 #bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 bindsym XF86AudioMute exec $HOME/.config/i3/scripts/volume.sh mute
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioMicMute exec "pactl set-source-mute 0 toggle; pactl set-source-mute 1 toggle; pactl set-source-mute 2 toggle"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
@@ -341,3 +343,5 @@ client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
 exec_always --no-startup-id wal -R
 exec_always --no-startup-id redshift -l 52:7
 #exec_always --no-startup-id picom
+
+exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec i3-sensible-terminal'
