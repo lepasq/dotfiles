@@ -31,9 +31,17 @@ export PATH="$HOME/.cabal/bin:$PATH"
 export PATH=/home/addo/bin:$PATH
 export PATH=/usr/lib/perl5:$PATH
 
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+
+#export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+#export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+#export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+export ANDROID_HOME="$HOME/Android/Sdk"
+#export PATH="$ANDROID_SDK_ROOT/tools/bin:$PATH"
+export PATH="$ANDROID_SDK_ROOT/:$PATH" 
 
 
 # Default Programs
